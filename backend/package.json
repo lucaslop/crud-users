@@ -1,0 +1,27 @@
+{
+  "name": "estagio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "sucrase ./src -d ./dist --transforms imports",
+    "start": "node ./src/server.js",
+    "dev": "nodemon -L ./src/server.js"
+  },
+  "author": "lucas lopes",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^7.18.2",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.5",
+    "sucrase": "^3.12.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "sequelize-cli": "^5.5.1"
+  }
+}

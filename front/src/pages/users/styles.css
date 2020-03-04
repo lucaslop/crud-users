@@ -1,0 +1,80 @@
+.users-info {
+  max-width: 700px;
+  margin: 20px auto 0;
+  padding: 20px;
+}
+
+.users-info form {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.users-info div {
+  margin-bottom: 20px;
+}
+
+.users-info p {
+  color: #666;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.users-info a {
+  height: 42px;
+  border-radius: 5px;
+  border: 2px solid #da552f;
+  background: none;
+  margin-top: 10px;
+  color: #da552f;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+  width: 150px;
+}
+a:hover {
+  background: #da552f;
+  color: #fff;
+}
+.users-info input {
+  color: black;
+  font-size: 18px;
+  line-height: 29px;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  border: #a76a59 2px solid;
+}
+
+.users-info span {
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.users-info .actions {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px 0 0 0;
+}
+
+.users-info .actions button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 0;
+  background: #da552f;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.users-info .actions button:hover {
+  opacity: 0.7;
+}

@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  nodejs-api:
+    container_name: nodejs-api
+    build: ./backend
+    volumes:
+      - .:/backend/home/node/api
+      - /home/node/api/node_modules
+    depends_on:
+      - postgres-api
+    ports:
+      - "3333:3333"
+    env_file: ./.env
+
+  postgres-api:
+    container_name: postgres-api
+    image: postgres:11
+    restart: unless-stopped
+    volumes:
+      - postgres-api-data:/data
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+  frontend:
+    build: ./front
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+    volumes:
+      - ./front/src:/usr/src/app/src
+      - ./front/public:/usr/src/app/public
+    links:
+      - nodejs-api
+
+volumes:
+  postgres-api-data:
