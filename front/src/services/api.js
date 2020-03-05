@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const api = axios.create({ baseURL: "http://192.168.99.100:3333/" });
+const api = axios.create({ baseURL: "http://localhost:3333/" });
 
 api.postOrPut = (url, id, data, config = {}) => {
   const method = id ? "put" : "post";
