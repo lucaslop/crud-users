@@ -11,15 +11,11 @@ class UserController {
   }
   async store(req, res) {
     const userExist = await User.findOne({ where: { email: req.body.email } });
-    console.log(userExist);
     if (userExist) {
       return res.status(400).json({ error: "Email já cadastrado!" });
     }
-    const { name, email } = await User.create(req.body);
-    return res.json({
-      name,
-      email
-    });
+    const user = await User.create(req.body);
+    return res.json(user);
   }
 
   async up(req, res) {
@@ -33,16 +29,16 @@ class UserController {
           .json({ error: "Já existe esse email cadastrado!" });
       }
     }
-    const { name } = await user.update(req.body);
+    const useredit = await user.update(req.body);
 
-    return res.json({ name, email });
+    return res.json(useredit);
   }
 
   async delete(req, res) {
     const user = await User.findByPk(req.params.id);
     const { email } = user;
     await User.destroy({ where: { email } });
-    return res.json({ sucess: "Deletado!" });
+    return res.json({ sucess: true });
   }
 }
 
